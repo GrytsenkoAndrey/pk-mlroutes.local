@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('{locale}')
     ->where(['locale' => '[azA-Z{2}'])
+    ->middleware('setLocale')
     ->group(function () {
         Route::get('/', function () {
             return view('welcome');
