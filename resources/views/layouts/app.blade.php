@@ -30,7 +30,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        @foreach(config('app.available_locales') as $locale)
+                            <li><a href="route(Route::currentRouteName(), ['locale' => $locale])">{{ strtoupper($locale) }}</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
