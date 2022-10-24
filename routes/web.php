@@ -19,7 +19,7 @@ Route::prefix('{locale}')
     ->middleware('setLocale')
     ->group(function () {
         Route::get('/', function () {
-            return view('welcome');
+            return redirect(app()->getLocale());
         });
 
         Auth::routes();
